@@ -109,7 +109,7 @@ hook global WinSetOption filetype=directory %{
 }
 
 define-command -hidden explore-files-enable %{
-  hook window -group explore-files RuntimeError '\d+:\d+: ''(?:edit|e)'' wrong argument count' %{
+  hook window -group explore-files RuntimeError '\d+:\d+: ''(?:edit|e)'': wrong argument count' %{
     explore-files %sh(dirname "$kak_buffile")
   }
   hook window -group explore-files RuntimeError '\d+:\d+: ''(?:edit|e)'' (.+): is a directory' %{
@@ -192,7 +192,7 @@ hook global WinSetOption filetype=buffers %{
 }
 
 define-command -hidden explore-buffers-enable %{
-  hook window -group explore-buffers RuntimeError '\d+:\d+: ''(buffer|b)'' wrong argument count' %{
+  hook window -group explore-buffers RuntimeError '\d+:\d+: ''(buffer|b)'': wrong argument count' %{
     # Hide error message
     echo
     explore-buffers
